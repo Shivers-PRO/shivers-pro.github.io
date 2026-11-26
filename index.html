@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SHIVERS</title>
+<meta name="description" content="SHIVERS — полезные IT-продукты. РусЭкзамен: подготовка к экзамену по русскому языку, истории и законам РФ для мигрантов из Узбекистана, Таджикистана и Киргизии.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preload" as="image" href="assets/img/hero.webp">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/exo-2-cyrillic-600-normal.woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=20261116">
+</head>
+<body>
+<!-- Экран 1: главный -->
+<section id="home" class="screen hero">
+  <header class="top">
+    <a class="brand" href="#" data-go="home"><img class="logo" src="assets/img/logo.svg" alt="">SHIVERS</a>
+    <nav class="nav">
+      <button class="pill" data-modal="payment" data-t="payment"></button>
+      <button class="pill" data-modal="about" data-t="about"></button>
+    </nav>
+  </header>
+  <h1 class="lcd" id="headline" aria-label="Я выведу свои пет-проекты на новые горизонты. Давай начнём!"></h1>
+  <div class="mcat" aria-hidden="true"><div class="mimg"></div></div>
+  <button class="start lcd" data-go="products" aria-label="Старт"></button>
+</section>
+
+<!-- Экран 2: продукты -->
+<section id="products" class="screen products" hidden>
+  <header class="top">
+    <a class="brand" href="#" data-go="home"><img class="logo" src="assets/img/logo.svg" alt="">SHIVERS</a>
+    <nav class="nav">
+      <button class="pill ghost" data-go="home" data-t="home"></button>
+      <button class="pill ghost" data-modal="payment" data-t="payment"></button>
+      <button class="pill ghost" data-modal="offer" data-t="offer"></button>
+    </nav>
+  </header>
+  <div class="track" id="track"></div>
+  <div class="pager" id="pager"></div>
+  <img class="cat" src="assets/img/cat.webp" alt="" aria-hidden="true">
+  <aside class="qrdock" id="qrdock" aria-label="Скачать приложение"></aside>
+</section>
+<script>/* Сразу показываем нужный экран, до загрузки остальных скриптов: иначе на миг мелькает главный экран с кнопкой «Обо мне» */if(location.hash==='#products'){document.getElementById('home').hidden=true;document.getElementById('products').hidden=false;}</script>
+
+<!-- Модальное окно -->
+<div class="modal" id="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true">
+    <button class="close" aria-label="Закрыть">×</button>
+    <div class="doc" id="modal-body"></div>
+  </div>
+</div>
+
+<footer class="foot" id="foot"></footer>
+
+<script src="assets/qrcode.js" defer></script>
+<script src="assets/seg14.js" defer></script>
+<script src="assets/content.js?v=20261116" defer></script>
+<script src="assets/site.js?v=20261116" defer></script>
+</body>
+</html>
